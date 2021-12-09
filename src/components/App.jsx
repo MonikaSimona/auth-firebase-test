@@ -6,9 +6,12 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import { Login } from './Login';
 import Dashboard from './Dashboard';
 import { useLocation } from 'react-router'
-import { useEffect } from 'react';
+import { Fragment, useEffect } from 'react';
 import Header from './Header';
 import { useAuth } from '../contexts/AuthContext'
+import PrivateRoute from './PrivateRoute';
+import { ForgotPassword } from './ForgotPassword';
+import { UpdateProfile } from './UpdateProfile';
 
 function App() {
 
@@ -16,14 +19,23 @@ function App() {
   return (
     <div className="wrapper">
       <Router>
-        <AuthProvider>
-          <Header />
-          <Routes>
-            <Route exact path="/" element={<Dashboard />} />
-            <Route path="/signup" element={<Signup />} />
-            <Route path="/login" element={<Login />} />
-          </Routes>
-        </AuthProvider>
+        <Fragment>
+          <AuthProvider>
+            <Header />
+            <Routes>
+              {/* <PrivateRoute exact path="/" element={<Dashboard />} /> */}
+              <Route exact path="/" element={<PrivateRoute />}>
+                <Route exact path="/" element={<Dashboard />} />
+              </Route>
+              <Route exact path="/update-profile" element={<PrivateRoute />}>
+                <Route exact path="/update-profile" element={<UpdateProfile />} />
+              </Route>
+              <Route path="/signup" element={<Signup />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/forgot-password" element={<ForgotPassword />} />
+            </Routes>
+          </AuthProvider>
+        </Fragment>
       </Router>
     </div>
 

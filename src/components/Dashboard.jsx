@@ -5,9 +5,8 @@ import { useAuth } from '../contexts/AuthContext'
 const Dashboard = () => {
     const { currentUser } = useAuth();
     return (
-        <div>
-
-            Hello {currentUser && currentUser.email}
+        <div className="container">
+            <h1 className="welcome-message"><span>Hello</span> <br /> {currentUser && currentUser.email}</h1>
         </div>
     )
 }

@@ -33,14 +33,14 @@ export const Signup = () => {
         <div className="container authContainer d-flex flex-column align-items-center ">
             <h1 className="authTitle">Sing up</h1>
             {error && <Alert variant="danger">{error}</Alert>}
-            <form className="authCard" onSubmit={handleSubmit(submitSignUpForm)}>
+            <form className="authCard" onSubmit={handleSubmit(submitSignUpForm)} >
                 <label htmlFor="email">Email</label>
                 <input type="email" id="email"
-                    placeholder="someone@example.com" {...register("email")} />
+                    placeholder="someone@example.com" {...register("email")} required autoComplete="new-email" />
                 <label htmlFor="password">Password</label>
-                <input type="password" id="password" {...register("password")} />
+                <input type="password" id="password" {...register("password")} required autoComplete="new-password" />
                 <label htmlFor="confirmPassword">Confirm Password</label>
-                <input type="password" id="confirmPassword" {...register("confirmPassword")} />
+                <input type="password" id="confirmPassword" {...register("confirmPassword")} required autoComplete="new-password" />
                 <button disabled={loading} type="submit">Sign Up</button>
             </form>
             <p className="authInfo">

@@ -4,9 +4,10 @@ import { useForm } from 'react-hook-form'
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 
-export const Login = () => {
-    const { login } = useAuth()
+export const ForgotPassword = () => {
+    const { resetPassword } = useAuth()
     const [error, setError] = useState('')
+    const [message, setMessage] = useState('')
     const [loading, setLoading] = useState(false)
     const navigate = useNavigate()
     const { handleSubmit, register, watch } = useForm();
@@ -14,10 +15,12 @@ export const Login = () => {
     const submitSignUpForm = async (data) => {
 
         try {
+            setMessage('')
             setError("")
             setLoading(true)
-            await login(data.email, data.password)
-            navigate("/")
+            await resetPassword(data.email)
+            setMessage("Check your inbox for further instructions.")
+
 
         } catch (error) {
             setError(error.message)
@@ -30,24 +33,22 @@ export const Login = () => {
     return (
 
         <div className="container authContainer d-flex flex-column align-items-center ">
-            <h1 className="authTitle">Log In</h1>
+            <h1 className="authTitle">Password Reset</h1>
 
             {error && <Alert variant="danger">{error}</Alert>}
+            {message && <Alert variant="success">{message}</Alert>}
             <form className="authCard" onSubmit={handleSubmit(submitSignUpForm)}>
                 <label htmlFor="email">Email</label>
                 <input type="email" id="email"
-                    placeholder="someone@example.com" {...register("email")} required />
-                <label htmlFor="password">Password</label>
-                <input type="password" id="password" {...register("password")} required />
+                    placeholder="someone@example.com" {...register("email")} />
 
-                <button disabled={loading} type="submit">Log In</button>
-                <div className="forgotPassword">
-                    <Link to="/forgot-password">Forgot password?</Link>
-                </div>
+
+                <button disabled={loading} type="submit">Reset Password</button>
+
             </form>
 
             <p className="authInfo">
-                Need an account? <Link to="/signup" className="linkButton">Create one.</Link>
+                Go to <Link to="/login" className="linkButton">Log In</Link>
             </p>
         </div>
 

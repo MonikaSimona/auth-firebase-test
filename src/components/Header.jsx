@@ -7,6 +7,7 @@ const Header = () => {
     const { currentUser, logout } = useAuth()
     const [error, setError] = useState('')
     const navigate = useNavigate()
+    const [toggle, setToggle] = useState(false);
 
     const handleLogout = async () => {
         setError("")
@@ -30,19 +31,27 @@ const Header = () => {
                             WN
                         </Link>
                     </div>
-                    <div className="menu-links">
+                    <div className={`menu-links ${toggle && "menu-links-open"}`}>
+                        <Icon icon="ion:close-outline" onClick={() => setToggle(false)} className="close-menu" />
                         <Link to="/" className="menu-item" >Home</Link>
                         <Link to="/" className="menu-item" >Home</Link>
                         <Link to="/" className="menu-item" >Home</Link>
-                    </div>
-                    <div className="social-links">
-                        <a href="www.facebook.com" target="_blank" > <Icon icon="ph:facebook-logo-fill" className="social-links-icon" /> </a>
-                        <a href="www.facebook.com" target="_blank" > <Icon icon="ph:instagram-logo-fill" className="social-links-icon" /> </a>
-                        <div className="group-icons">
+                        <div className="group-icons mobile">
                             <Link to="/update-profile"> <Icon icon="iconoir:profile-circled" /> </Link>
                             <button className="logout" onClick={handleLogout}> <Icon icon="majesticons:logout-line" /> </button>
                         </div>
                     </div>
+                    <div className="social-links">
+                        <a href="https://www.facebook.com" target="_blank" > <Icon icon="ph:facebook-logo-fill" className="social-links-icon" /> </a>
+                        <a href="https://www.instagram.com" target="_blank" > <Icon icon="ph:instagram-logo-fill" className="social-links-icon" /> </a>
+                        <div className="group-icons desktop">
+                            <Link to="/update-profile"> <Icon icon="iconoir:profile-circled" /> </Link>
+                            <button className="logout" onClick={handleLogout}> <Icon icon="majesticons:logout-line" /> </button>
+                        </div>
+                    </div>
+                    <Icon className="hamburger-menu" icon="system-uicons:menu-hamburger"
+                        onClick={() => setToggle(true)}
+                    />
                 </div>
             </header>
         )
