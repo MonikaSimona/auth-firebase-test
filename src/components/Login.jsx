@@ -30,7 +30,7 @@ export const Login = () => {
     return (
 
         <div className="container authContainer d-flex flex-column align-items-center ">
-            <h1 className="authTitle">Log In</h1>
+            <h1 className="authTitle">Log In please</h1>
 
             {error && <Alert variant="danger">{error}</Alert>}
             <form className="authCard" onSubmit={handleSubmit(submitSignUpForm)}>
