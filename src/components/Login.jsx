@@ -9,7 +9,7 @@ export const Login = () => {
     const [error, setError] = useState('')
     const [loading, setLoading] = useState(false)
     const navigate = useNavigate()
-    const { handleSubmit, register, watch } = useForm();
+    const { handleSubmit, register } = useForm();
 
     const submitSignUpForm = async (data) => {
 
@@ -30,7 +30,7 @@ export const Login = () => {
     return (
 
         <div className="container authContainer d-flex flex-column align-items-center ">
-            <h1 className="authTitle">Log In please</h1>
+            <h1 className="authTitle">Log In</h1>
 
             {error && <Alert variant="danger">{error}</Alert>}
             <form className="authCard" onSubmit={handleSubmit(submitSignUpForm)}>

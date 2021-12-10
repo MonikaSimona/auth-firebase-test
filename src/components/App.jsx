@@ -5,10 +5,8 @@ import { AuthProvider } from '../contexts/AuthContext';
 import { HashRouter as Router, Routes, Route } from "react-router-dom"
 import { Login } from './Login';
 import Dashboard from './Dashboard';
-import { useLocation } from 'react-router'
-import { Fragment, useEffect } from 'react';
+import { Fragment } from 'react';
 import Header from './Header';
-import { useAuth } from '../contexts/AuthContext'
 import PrivateRoute from './PrivateRoute';
 import { ForgotPassword } from './ForgotPassword';
 import { UpdateProfile } from './UpdateProfile';

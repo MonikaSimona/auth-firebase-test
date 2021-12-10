@@ -9,7 +9,7 @@ export const Signup = () => {
     const [error, setError] = useState('')
     const [loading, setLoading] = useState(false)
     const navigate = useNavigate()
-    const { handleSubmit, register, watch } = useForm();
+    const { handleSubmit, register } = useForm();
 
     const submitSignUpForm = async (data) => {
         if (data.password !== data.confirmPassword) {

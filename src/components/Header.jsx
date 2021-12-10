@@ -18,8 +18,10 @@ const Header = () => {
         } catch (error) {
             setError(error.message)
 
+
         }
         logout();
+        console.log(error)
 
     }
     if (currentUser) {
@@ -42,8 +44,8 @@ const Header = () => {
                         </div>
                     </div>
                     <div className="social-links">
-                        <a href="https://www.facebook.com" target="_blank" > <Icon icon="ph:facebook-logo-fill" className="social-links-icon" /> </a>
-                        <a href="https://www.instagram.com" target="_blank" > <Icon icon="ph:instagram-logo-fill" className="social-links-icon" /> </a>
+                        <a href="https://www.facebook.com" target="_blank" rel="noreferrer" > <Icon icon="ph:facebook-logo-fill" className="social-links-icon" /> </a>
+                        <a href="https://www.instagram.com" target="_blank" rel="noreferrer" > <Icon icon="ph:instagram-logo-fill" className="social-links-icon" /> </a>
                         <div className="group-icons desktop">
                             <Link to="/update-profile"> <Icon icon="iconoir:profile-circled" /> </Link>
                             <button className="logout" onClick={handleLogout}> <Icon icon="majesticons:logout-line" /> </button>

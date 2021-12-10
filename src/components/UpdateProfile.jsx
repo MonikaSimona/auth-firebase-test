@@ -9,7 +9,7 @@ export const UpdateProfile = () => {
     const [error, setError] = useState('')
     const [loading, setLoading] = useState(false)
     const navigate = useNavigate()
-    const { handleSubmit, register, watch, reset } = useForm();
+    const { handleSubmit, register, reset } = useForm();
 
     const submitSignUpForm = (data) => {
         reset({ email: "", password: "", passwordConfirm: "" })

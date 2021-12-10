@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Alert } from 'react-bootstrap';
 import { useForm } from 'react-hook-form'
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 
 export const ForgotPassword = () => {
@@ -9,8 +9,7 @@ export const ForgotPassword = () => {
     const [error, setError] = useState('')
     const [message, setMessage] = useState('')
     const [loading, setLoading] = useState(false)
-    const navigate = useNavigate()
-    const { handleSubmit, register, watch } = useForm();
+    const { handleSubmit, register } = useForm();
 
     const submitSignUpForm = async (data) => {
 
