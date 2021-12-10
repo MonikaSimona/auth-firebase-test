@@ -60,6 +60,7 @@ $text-dark: #333333;
     }
   }
 }
+
 .authContainer {
   font-family: "Josefin Sans", sans-serif;
   font-weight: 300;
@@ -310,4 +311,15 @@ $text-dark: #333333;
     margin-right: 10%;
     margin-left: auto;
   }
+}
+footer {
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 400;
+  color: $light-blue;
+  padding: 5px 0;
+  background-color: $beige;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
 }

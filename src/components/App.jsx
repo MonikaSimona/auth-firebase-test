@@ -10,6 +10,7 @@ import Header from './Header';
 import PrivateRoute from './PrivateRoute';
 import { ForgotPassword } from './ForgotPassword';
 import { UpdateProfile } from './UpdateProfile';
+import Footer from './Footer';
 
 function App() {
 
@@ -32,6 +33,7 @@ function App() {
               <Route path="/login" element={<Login />} />
               <Route path="/forgot-password" element={<ForgotPassword />} />
             </Routes>
+            <Footer />
           </AuthProvider>
         </Fragment>
       </Router>
