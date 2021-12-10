@@ -2,7 +2,7 @@ import '../style/App.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Signup } from './Signup';
 import { AuthProvider } from '../contexts/AuthContext';
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
+import { HashRouter as Router, Routes, Route } from "react-router-dom"
 import { Login } from './Login';
 import Dashboard from './Dashboard';
 import { useLocation } from 'react-router'
