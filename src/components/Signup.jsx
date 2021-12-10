@@ -18,7 +18,7 @@ export const Signup = () => {
         try {
             setError("")
             setLoading(true)
-            await signup(data.email, data.password)
+            await signup(data.email, data.password, data.firstName, data.lastName)
             navigate("/")
 
         } catch (error) {
@@ -35,12 +35,48 @@ export const Signup = () => {
             {error && <Alert variant="danger">{error}</Alert>}
             <form className="authCard" onSubmit={handleSubmit(submitSignUpForm)} >
                 <label htmlFor="email">Email</label>
-                <input type="email" id="email"
-                    placeholder="someone@example.com" {...register("email")} required autoComplete="new-email" />
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="someone@example.com"
+                    {...register("email")}
+                    required
+                    autoComplete="new-email" />
+
+                <label htmlFor="firstName">First name</label>
+                <input
+                    type="text"
+                    id="firstName"
+                    placeholder="Jane"
+                    {...register("firstName")}
+                    required
+                    autoComplete="new-text" />
+
+                <label htmlFor="lastName">Last name</label>
+                <input
+                    type="text"
+                    id="lastName"
+                    placeholder="Doe"
+                    {...register("lastName")}
+                    required
+                    autoComplete="new-text" />
+
                 <label htmlFor="password">Password</label>
-                <input type="password" id="password" {...register("password")} required autoComplete="new-password" />
+                <input
+                    type="password"
+                    id="password"
+                    {...register("password")}
+                    required
+                    autoComplete="new-password" />
+
                 <label htmlFor="confirmPassword">Confirm Password</label>
-                <input type="password" id="confirmPassword" {...register("confirmPassword")} required autoComplete="new-password" />
+                <input
+                    type="password"
+                    id="confirmPassword"
+                    {...register("confirmPassword")}
+                    required
+                    autoComplete="new-password" />
+
                 <button disabled={loading} type="submit">Sign Up</button>
             </form>
             <p className="authInfo">

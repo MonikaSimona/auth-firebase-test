@@ -21,8 +21,14 @@ export const AuthProvider = ({ children }) => {
         return unsubscribe
     }, [])
 
-    const signup = (email, password) => {
-        return auth.createUserWithEmailAndPassword(email, password)
+    const signup = (email, password, firstName, lastName) => {
+        return auth.createUserWithEmailAndPassword(email, password).then((result) => {
+            result.user.updateProfile({
+                displayName: firstName + " " + lastName
+            })
+        }).catch((error) => {
+            console.log("display error", error.message)
+        })
     }
 
     const login = (email, password) => {
@@ -40,6 +46,11 @@ export const AuthProvider = ({ children }) => {
     const updatePassword = (password) => {
         return currentUser.updatePassword(password)
     }
+    const updateDisplayName = (firstName, lastName) => {
+        return currentUser.updateProfile({
+            displayName: firstName + " " + lastName
+        })
+    }
     const value = {
         currentUser,
         signup,
@@ -47,7 +58,8 @@ export const AuthProvider = ({ children }) => {
         logout,
         resetPassword,
         updateEmail,
-        updatePassword
+        updatePassword,
+        updateDisplayName
 
     }
     return (

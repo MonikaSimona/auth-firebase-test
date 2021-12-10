@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { Icon } from '@iconify/react';
 import { useAuth } from '../contexts/AuthContext';
+import ReactTooltip from 'react-tooltip';
 
 const Header = () => {
     const { currentUser, logout } = useAuth()
@@ -47,8 +48,9 @@ const Header = () => {
                         <a href="https://www.facebook.com" target="_blank" rel="noreferrer" > <Icon icon="ph:facebook-logo-fill" className="social-links-icon" /> </a>
                         <a href="https://www.instagram.com" target="_blank" rel="noreferrer" > <Icon icon="ph:instagram-logo-fill" className="social-links-icon" /> </a>
                         <div className="group-icons desktop">
-                            <Link to="/update-profile"> <Icon icon="iconoir:profile-circled" /> </Link>
-                            <button className="logout" onClick={handleLogout}> <Icon icon="majesticons:logout-line" /> </button>
+                            <Link to="/update-profile"> <Icon icon="iconoir:profile-circled" data-tip="profile" /> </Link>
+                            <button className="logout" onClick={handleLogout}> <Icon icon="majesticons:logout-line" data-tip="logout" /> </button>
+                            <ReactTooltip />
                         </div>
                     </div>
                     <Icon className="hamburger-menu" icon="system-uicons:menu-hamburger"
