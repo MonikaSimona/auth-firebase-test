@@ -28,10 +28,10 @@ export const blogsArray = [
 
 const Dashboard = () => {
     const { currentUser } = useAuth();
-    console.log(currentUser.displayName)
+    console.log(currentUser)
     return (
         <div className="container px-4 px-sm-0">
-            <h1 className="welcome-message"><span className='welcome-message-hello'>Hello</span> <br /> {currentUser && currentUser.displayName.split(" ")[0]} {currentUser.displayName.split(" ")[1]}</h1>
+            <h1 className="welcome-message"><span className='welcome-message-hello'>Hello</span> <br /> {currentUser && currentUser.displayName && currentUser.displayName.split(" ")[0]} {currentUser.displayName.split(" ")[1]}</h1>
             <h3 className='intro'>
                 Here are the latest blogs for you
             </h3>
