@@ -1,19 +1,25 @@
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap");
 $light-blue: #a2d2ff;
 $beige: #fef9ef;
 $light-orange: #ff865e;
 $yellow: #fee440;
 $text-dark: #333333;
-
+$gray: gray;
+$header-bg: rgb(19, 14, 14);
 @mixin tablet {
-  @media (max-width: 992px) {
+  @media (max-width: 720px) {
     @content;
   }
 }
 
+@import "../style/blogCard";
+@import "../style/singleBlog";
+
 .wrapper {
+  display: flex;
+  flex-direction: column;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.5) 3.76%, rgba(255, 255, 255, 0.5) 61.46%),
     url("https://images.unsplash.com/photo-1621286530465-42e52a959e16?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=679&q=80");
   background-position: center center;
@@ -22,31 +28,50 @@ $text-dark: #333333;
   width: 100%;
   overflow-x: hidden;
   position: relative;
+  font-family: "Raleway", sans-serif;
+  font-weight: lighter;
   .title {
     width: fit-content;
     margin: 0 auto;
+    padding: 0 15px;
     padding-top: 50px;
     font-size: 3.5rem;
     font-family: "Pacifico", cursive;
     color: $light-blue;
     text-align: center;
     position: relative;
+
     &::after {
       content: "";
       position: absolute;
       bottom: 0;
       left: 50%;
-      width: 125%;
+      width: 100%;
       transform: translateX(-50%);
       height: 2px;
       background-image: linear-gradient(
         90deg,
-        rgba(255, 255, 255, 0.5),
+        rgba(255, 255, 255, 0),
         $light-blue,
         $light-orange,
         $light-blue,
-        rgba(255, 255, 255, 0.5)
+        rgba(255, 255, 255, 0)
       );
+      @include tablet() {
+        width: 125%;
+      }
+    }
+  }
+  .website-intro {
+    text-align: center;
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 30px;
+    font-size: 1.1rem;
+    color: $text-dark;
+    line-height: 25px;
+    span {
+      font-weight: bold;
     }
   }
   .welcome-message {
@@ -54,10 +79,20 @@ $text-dark: #333333;
     font-weight: 500;
     text-align: center;
     margin-top: 30px;
-    font-size: 3rem;
-    span {
+    margin-bottom: 50px;
+    font-size: 2rem;
+    &-hello {
+      font-family: "Pacifico", cursive;
+
       font-weight: 300;
+      font-size: 2.5rem;
     }
+  }
+  .intro {
+    font-size: 1.4rem;
+    text-align: center;
+    font-weight: lighter;
+    margin-bottom: 40px;
   }
 }
 
@@ -163,10 +198,11 @@ $text-dark: #333333;
   font-family: "Josefin Sans", sans-serif;
   display: flex;
   width: 100%;
-  background-color: $beige;
+  background-color: $text-dark;
   padding: 5px 10%;
   align-items: center;
   box-shadow: 0px 0px 12px rgba(189, 184, 184, 0.19);
+  padding-bottom: 0;
 
   .logo {
     margin-right: auto;
@@ -197,10 +233,11 @@ $text-dark: #333333;
     margin: 0 auto;
 
     .menu-item {
-      color: $text-dark;
+      color: $beige;
       text-decoration: none;
-      font-size: 1.2rem;
+      font-size: 1.15rem;
       transition: 0.3s;
+      font-weight: normal;
       &:hover {
         color: $light-orange;
         transform: scale(1.09);
@@ -213,7 +250,7 @@ $text-dark: #333333;
       width: 65%;
       flex-direction: column;
       background-color: $light-blue;
-      color: $beige;
+      color: $text-dark;
       position: absolute;
       top: 0;
       right: 0;
@@ -221,7 +258,7 @@ $text-dark: #333333;
       transition: 0.6s;
       .menu-item {
         margin-left: 20px;
-        color: $beige !important;
+        color: $text-dark !important;
         opacity: 0;
         transition: 0.3s;
       }
@@ -313,7 +350,8 @@ $text-dark: #333333;
   }
 }
 footer {
-  font-family: "Josefin Sans", sans-serif;
+  margin-top: auto;
+  font-family: "Poppins", sans-serif;
   font-weight: 400;
   color: $light-blue;
   padding: 5px 0;
@@ -322,4 +360,11 @@ footer {
   width: 100%;
   align-items: center;
   justify-content: center;
+  font-size: 0.9rem;
+  span {
+    font-family: "Pacifico", cursive;
+    margin-right: 10px;
+    line-height: 10px;
+    font-size: 1rem;
+  }
 }

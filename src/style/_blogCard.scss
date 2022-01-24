@@ -1,0 +1,110 @@
+.blog-link {
+    color: $text-dark;
+    text-decoration: none;
+    &:hover {
+        color: $text-dark;
+        text-decoration: none;
+        .card-container {
+            transform: translate3d(0px, -7px, 0px);
+        }
+    }
+}
+.card-container {
+    background-color: $beige;
+    box-shadow: 10px 11px 7px -5px rgba(51, 51, 51, 0.13);
+    border-radius: 7px;
+    margin: 20px 0;
+    transition: 0.3s;
+}
+.card-wrapper {
+    padding: 10px 15px;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 15px;
+}
+.blog-card-img-container {
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    position: relative;
+    width: 100%;
+    height: 150px;
+    .blog-card-img {
+        border-top-left-radius: 7px;
+        border-top-right-radius: 7px;
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+    }
+    .img-overlay {
+        width: 100%;
+        position: absolute;
+        height: 70px;
+
+        bottom: 0;
+        z-index: 5;
+        background: linear-gradient(
+            0deg,
+            rgba(34, 29, 29, 0.973),
+            rgba(34, 29, 29, 0.726),
+            rgba(34, 29, 29, 0.377),
+            rgba(34, 29, 29, 0)
+        );
+    }
+}
+.blog-card-header {
+    &-title {
+        font-size: 1.4rem;
+        font-weight: bolder;
+        color: $text-dark;
+        margin: 0;
+        font-family: "Josefin Sans", sans-serif;
+    }
+    .info-line {
+        display: flex;
+        align-items: center;
+        margin-bottom: 7px;
+        margin-top: 7px;
+        width: 100%;
+
+        .blog-date {
+            font-size: 0.7rem;
+            color: $gray;
+            margin-left: 5px;
+        }
+    }
+}
+.blog-card-icon {
+    font-size: 0.7rem;
+    color: $gray;
+    transition: 0.3s;
+}
+
+.blog-card-body {
+    margin-bottom: 10px;
+    &-text {
+        line-height: 19px;
+    }
+}
+.blog-card-footer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 10px;
+    transition: 0.3s;
+    &:hover {
+        .card-link,
+        .blog-card-icon {
+            transform: scale(1.03);
+            color: $light-orange;
+        }
+    }
+    .card-link {
+        margin-right: 7px;
+        text-align: right;
+        color: gray;
+        text-decoration: none;
+        font-size: 0.98rem;
+        line-height: 10px;
+        transition: 0.3s;
+    }
+}

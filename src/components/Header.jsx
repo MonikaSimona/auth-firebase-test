@@ -31,14 +31,14 @@ const Header = () => {
                 <div className="menu ">
                     <div className="logo">
                         <Link to="/" className="logo-text">
-                            WN
+                            AT
                         </Link>
                     </div>
                     <div className={`menu-links ${toggle && "menu-links-open"}`}>
                         <Icon icon="ion:close-outline" onClick={() => setToggle(false)} className="close-menu" />
                         <Link to="/" className="menu-item" >Home</Link>
-                        <Link to="/" className="menu-item" >Home</Link>
-                        <Link to="/" className="menu-item" >Home</Link>
+                        <Link to="/" className="menu-item" >Contact</Link>
+                        <Link to="/" className="menu-item" >About</Link>
                         <div className="group-icons mobile">
                             <Link to="/update-profile"> <Icon icon="iconoir:profile-circled" /> </Link>
                             <button className="logout" onClick={handleLogout}> <Icon icon="majesticons:logout-line" /> </button>
@@ -60,9 +60,13 @@ const Header = () => {
             </header>
         )
     } else {
-        return <h1 className="title">
-            Website Name
-        </h1>
+        return <div>
+
+            <h1 className="title">
+                Apartmen Tour
+            </h1>
+            <p className='website-intro'> <span>Love Apartment Tours?</span> <br />   If that's your thing register to get in the the comunity where the best apratments are taken on tour or login if you are already a member. </p>
+        </div>
     }
 
 }

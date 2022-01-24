@@ -1,13 +1,48 @@
 import React from 'react'
 import { useAuth } from '../contexts/AuthContext'
+import BlogCard from './BlogCard';
+
+export const blogsArray = [
+    {
+        id: 0,
+        title: 'Blog Title',
+        text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, placeat eveniet ipsa saepe repellendus porro officiis similique suscipit exercitationem quae.",
+        date: "02.02.2021",
+        image: "https://images.unsplash.com/photo-1615529151169-7b1ff50dc7f2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80"
+    },
+    {
+        id: 1,
+        title: 'Blog Title',
+        text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, placeat eveniet ipsa saepe repellendus porro officiis similique suscipit exercitationem quae.",
+        date: "01.03.2017",
+        image: "https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+    },
+    {
+        id: 2,
+        title: 'Blog Title',
+        text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, placeat eveniet ipsa saepe repellendus porro officiis similique suscipit exercitationem quae.",
+        date: "30.03.2018",
+        image: "https://images.unsplash.com/photo-1522444195799-478538b28823?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+    },
+]
 
 const Dashboard = () => {
     const { currentUser } = useAuth();
     console.log(currentUser.displayName)
     return (
-        <div className="container">
-            <h1 className="welcome-message"><span>Hello</span> <br /> {currentUser && currentUser.displayName.split(" ")[0]} {currentUser.displayName.split(" ")[1]}</h1>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione reprehenderit ab dolorum tenetur voluptatibus nihil placeat expedita veritatis error vero, natus omnis cumque odit unde. Magnam asperiores aliquid quibusdam ab veniam dolorem nisi totam vero cum. Molestias, necessitatibus eligendi cum, nisi fugit dolore molestiae ratione sint laudantium, odit ea aut nulla quaerat! Perspiciatis cum accusamus repudiandae eum labore nulla provident porro alias, possimus accusantium veritatis eaque dolore, maiores rem. Nobis tempore eveniet reprehenderit animi. Dolorem ut sequi reiciendis dolores iste aperiam quod cum enim totam ipsam sit mollitia repellat quis velit, itaque sapiente eum illum, facere ipsa magni quos culpa fugit! Iure ex eaque error praesentium aut voluptatibus repellat, enim cumque quaerat illo beatae corrupti doloremque magni, aspernatur, maxime nam animi quod harum modi laborum blanditiis omnis dolorum impedit fuga! Perferendis cumque in velit ratione corrupti qui accusantium rem ex amet error nulla earum ipsa, obcaecati illo sit! Provident illum adipisci recusandae repellendus odit autem deserunt a veritatis officiis, mollitia neque! Necessitatibus molestiae maiores ut expedita facilis, sint autem optio delectus ad obcaecati perferendis ab dolor, eligendi impedit labore ea quos alias id eum, minima quia cupiditate amet modi deleniti? Blanditiis, nostrum porro id perspiciatis doloremque sunt non dolor sequi reiciendis? Odio, exercitationem maxime nemo quam, ut doloremque animi sunt placeat praesentium velit quia enim, consequuntur perspiciatis quos sapiente eveniet aspernatur at et illum. Quia animi velit magni error, minima enim officiis voluptatibus temporibus, tempora impedit necessitatibus, quam numquam quaerat. Id, libero facilis. At sed similique ipsam quisquam voluptates vero minima iste. Tempora illum in veniam consequuntur natus blanditiis repellat inventore fugiat a aperiam! Quibusdam, similique placeat quia labore facilis dolor porro culpa accusamus tempore minima eveniet neque laboriosam cumque, pariatur vero mollitia reprehenderit aut consectetur sit animi unde aliquid! Quis repudiandae, architecto laborum perspiciatis labore provident alias dolorum est recusandae corrupti similique vero tempore, suscipit facilis eaque veniam officia possimus. A ex officiis voluptate velit impedit aspernatur atque fuga tenetur dicta architecto qui assumenda, corporis nam voluptatibus veritatis doloremque temporibus nisi ea cupiditate nesciunt laudantium ipsum debitis! A ipsum delectus, animi omnis, autem facere amet cum unde quibusdam voluptatibus exercitationem quam consequatur corporis saepe ipsam, optio distinctio. Repudiandae suscipit consectetur odio voluptates sed nam et, corrupti rem dignissimos laboriosam voluptatibus dolorum praesentium atque debitis similique itaque sapiente magnam incidunt tenetur eaque ab quasi deleniti. Tempore voluptates neque ipsum facere minima maxime quasi expedita atque a aut voluptate dolore sed nesciunt molestiae officia saepe perspiciatis, voluptatum nisi dolorum aperiam debitis. Ab magnam accusamus doloremque laboriosam labore, facilis iusto, nam corporis tempora maxime consequatur dolorem eveniet? Animi aspernatur commodi molestiae, perferendis minima quibusdam doloremque iure consequatur, dolore sint cumque veniam nostrum non illo voluptates, eum totam officiis. Enim natus quisquam molestiae praesentium voluptate laborum eos error illum, perferendis ipsam iusto sequi esse dicta inventore quis veritatis? Aperiam nulla repellendus exercitationem minus consequatur fuga dolorem culpa voluptates beatae necessitatibus officia fugiat labore sequi harum, quidem excepturi soluta possimus laborum tenetur facilis? Hic praesentium ad inventore facilis ipsum ex consectetur corporis, temporibus non! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt recusandae quae tempora dolor aut qui perspiciatis sint aliquam nam, harum neque nemo voluptates distinctio. Atque dicta est porro voluptatum sunt accusamus, temporibus quasi asperiores fugit natus sint in ratione! Libero, quas? Nihil atque, incidunt impedit deleniti porro placeat minus pariatur corporis eum? Quam omnis nemo temporibus illum vero provident? Dignissimos rerum, consequatur maxime dicta exercitationem aspernatur necessitatibus quidem repellendus iste repellat eveniet itaque aliquam enim deleniti, suscipit deserunt dolores placeat impedit. Quaerat saepe ipsa dolorum exercitationem corporis numquam, quia expedita blanditiis esse rerum odit, necessitatibus dignissimos nemo, iste voluptas quod architecto dolore commodi libero cupiditate distinctio laboriosam! Culpa cum, voluptatum quibusdam harum nulla dolores eaque mollitia atque dolor. Alias ab corporis blanditiis soluta, odit illum. Culpa voluptas neque aliquam voluptate dolor eius animi quidem, illo iste soluta, recusandae molestias minus accusantium consequatur cupiditate voluptatibus. Excepturi ipsum unde, illum nesciunt ut illo architecto aspernatur harum impedit temporibus alias earum quos deserunt asperiores autem voluptates ratione sed dolorum delectus tempore laborum rem maxime? A quo nemo perferendis similique quibusdam nobis voluptatum at voluptate praesentium sed! Odio a maxime, vel vero eaque atque harum officia fugiat, corporis eum esse? Odio, nobis quae vero vitae at ducimus perspiciatis, illum autem unde officiis nisi obcaecati qui quo non sapiente voluptate blanditiis atque voluptatum temporibus provident. Consectetur a numquam vel. Id amet maiores veritatis minus. Veniam reiciendis est corporis soluta ea ab quos labore ut eos? Totam inventore unde aspernatur blanditiis, ducimus animi laborum, veniam cumque, quibusdam autem dolor maiores. Et dignissimos ea aliquid accusantium consequuntur magnam rerum tempore dolores explicabo excepturi, adipisci illo officia, soluta dolor accusamus eveniet beatae nulla amet. Quo tempora qui nisi consectetur corporis eligendi sed laudantium, sunt molestiae optio reprehenderit natus laboriosam reiciendis mollitia ipsum hic. Maxime, pariatur reiciendis! Laboriosam, expedita.
+        <div className="container px-4 px-sm-0">
+            <h1 className="welcome-message"><span className='welcome-message-hello'>Hello</span> <br /> {currentUser && currentUser.displayName.split(" ")[0]} {currentUser.displayName.split(" ")[1]}</h1>
+            <h3 className='intro'>
+                Here are the latest blogs for you
+            </h3>
+            <div className="row d-flex justify-content-center">
+
+                {blogsArray && blogsArray.map((blog) => (
+                    <div key={blog.id} className="col-12 col-sm-6 col-lg-4 px-3 px-md-4 ">
+                        <BlogCard id={blog.id} img={blog.image} title={blog.title} text={blog.text} date={blog.date} />
+                    </div>
+                ))}
+            </div>
         </div>
     )
 }

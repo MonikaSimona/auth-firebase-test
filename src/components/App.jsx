@@ -11,6 +11,7 @@ import PrivateRoute from './PrivateRoute';
 import { ForgotPassword } from './ForgotPassword';
 import { UpdateProfile } from './UpdateProfile';
 import Footer from './Footer';
+import SingleBlog from './SingleBlog';
 
 function App() {
 
@@ -28,6 +29,9 @@ function App() {
               </Route>
               <Route exact path="/update-profile" element={<PrivateRoute />}>
                 <Route exact path="/update-profile" element={<UpdateProfile />} />
+              </Route>
+              <Route exact path="/blog/:id" element={<SingleBlog />}>
+
               </Route>
               <Route path="/signup" element={<Signup />} />
               <Route path="/login" element={<Login />} />
