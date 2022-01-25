@@ -10,6 +10,15 @@ const Header = () => {
     const navigate = useNavigate()
     const [toggle, setToggle] = useState(false);
 
+    const scrollToTop = () => {
+        console.log("click")
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    }
+
+
     const handleLogout = async () => {
         setError("")
         try {
@@ -27,37 +36,41 @@ const Header = () => {
     }
     if (currentUser) {
         return (
-            <header>
-                <div className="menu ">
-                    <div className="logo">
-                        <Link to="/" className="logo-text">
-                            AT
-                        </Link>
-                    </div>
-                    <div className={`menu-links ${toggle && "menu-links-open"}`}>
-                        <Icon icon="ion:close-outline" onClick={() => setToggle(false)} className="close-menu" />
-                        <Link to="/" className="menu-item" >Home</Link>
-                        <Link to="/contact" className="menu-item" >Contact</Link>
-                        <Link to="/about" className="menu-item" >About</Link>
-                        <div className="group-icons mobile">
-                            <Link to="/update-profile"> <Icon icon="iconoir:profile-circled" /> </Link>
-                            <button className="logout" onClick={handleLogout}> <Icon icon="majesticons:logout-line" /> </button>
+            <>
+                <button className='up-to-top' onClick={() => scrollToTop()}><Icon className='up-to-top-icon' icon="akar-icons:circle-chevron-up" /></button>
+
+                <header>
+                    <div className="menu ">
+                        <div className="logo">
+                            <Link to="/" className="logo-text">
+                                AT
+                            </Link>
                         </div>
-                    </div>
-                    <div className="social-links">
-                        <a href="https://www.facebook.com" target="_blank" rel="noreferrer" > <Icon icon="ph:facebook-logo-fill" className="social-links-icon" /> </a>
-                        <a href="https://www.instagram.com" target="_blank" rel="noreferrer" > <Icon icon="ph:instagram-logo-fill" className="social-links-icon" /> </a>
-                        <div className="group-icons desktop">
-                            <Link to="/update-profile"> <Icon icon="iconoir:profile-circled" data-tip="profile" /> </Link>
-                            <button className="logout" onClick={handleLogout}> <Icon icon="majesticons:logout-line" data-tip="logout" /> </button>
-                            <ReactTooltip />
+                        <div className={`menu-links ${toggle && "menu-links-open"}`}>
+                            <Icon icon="ion:close-outline" onClick={() => setToggle(false)} className="close-menu" />
+                            <Link to="/" className="menu-item" >Home</Link>
+                            <Link to="/contact" className="menu-item" >Contact</Link>
+                            <Link to="/about" className="menu-item" >About</Link>
+                            <div className="group-icons mobile">
+                                <Link to="/update-profile"> <Icon icon="iconoir:profile-circled" /> </Link>
+                                <button className="logout" onClick={handleLogout}> <Icon icon="majesticons:logout-line" /> </button>
+                            </div>
                         </div>
+                        <div className="social-links">
+                            <a href="https://www.facebook.com" target="_blank" rel="noreferrer" > <Icon icon="ph:facebook-logo-fill" className="social-links-icon" /> </a>
+                            <a href="https://www.instagram.com" target="_blank" rel="noreferrer" > <Icon icon="ph:instagram-logo-fill" className="social-links-icon" /> </a>
+                            <div className="group-icons desktop">
+                                <Link to="/update-profile"> <Icon icon="iconoir:profile-circled" data-tip="profile" /> </Link>
+                                <button className="logout" onClick={handleLogout}> <Icon icon="majesticons:logout-line" data-tip="logout" /> </button>
+                                <ReactTooltip />
+                            </div>
+                        </div>
+                        <Icon className="hamburger-menu" icon="system-uicons:menu-hamburger"
+                            onClick={() => setToggle(true)}
+                        />
                     </div>
-                    <Icon className="hamburger-menu" icon="system-uicons:menu-hamburger"
-                        onClick={() => setToggle(true)}
-                    />
-                </div>
-            </header>
+                </header>
+            </>
         )
     } else {
         return <div>
