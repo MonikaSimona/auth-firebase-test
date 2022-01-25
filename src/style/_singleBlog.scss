@@ -2,11 +2,13 @@
     width: 100%;
     position: relative;
     height: 400px;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.479);
     img {
         width: 100%;
         object-fit: cover;
         height: 400px;
         object-position: center;
+        filter: blur(3px);
     }
     .overlay {
         width: 100%;
@@ -46,7 +48,30 @@
     }
 }
 .blog-content {
-    height: 100vh;
     background: white;
     padding: 50px 50px;
+    padding-bottom: 40px;
+}
+.apt-image {
+    width: 100%;
+    object-fit: cover;
+    height: 450px;
+    margin: 30px 0;
+    @include tablet() {
+        margin: 20px 0;
+    }
+}
+.content-text {
+    font-family: "Raleway", sans-serif;
+    color: $text-dark;
+    text-align: center;
+    font-size: 1.1rem;
+}
+.quote {
+    margin-bottom: 0;
+    margin-top: 20px;
+    font-family: "Pacifico", cursive;
+    color: $light-blue;
+    font-size: 1rem;
+    text-align: center;
 }

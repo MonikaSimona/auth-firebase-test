@@ -16,6 +16,7 @@ $header-bg: rgb(19, 14, 14);
 
 @import "../style/blogCard";
 @import "../style/singleBlog";
+@import "../style/contact";
 
 .wrapper {
   display: flex;
@@ -24,7 +25,7 @@ $header-bg: rgb(19, 14, 14);
     url("https://images.unsplash.com/photo-1621286530465-42e52a959e16?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=679&q=80");
   background-position: center center;
   background-size: cover;
-  height: 100vh;
+
   width: 100%;
   overflow-x: hidden;
   position: relative;
@@ -95,12 +96,45 @@ $header-bg: rgb(19, 14, 14);
     margin-bottom: 40px;
   }
 }
+.up-to-top {
+  position: fixed;
+  bottom: 8%;
+  right: 4.5%;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  border: none;
+  background-color: $light-blue;
+  box-shadow: 0.5px 0.5px 4px rgba(48, 48, 48, 0.247);
+  opacity: 0.7;
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99;
+  @include tablet() {
+    width: 35px;
+    height: 35px;
+    opacity: 1;
+  }
+  &:hover {
+    opacity: 1;
+  }
+  &-icon {
+    color: $beige;
+    font-size: 1.65rem;
+    @include tablet() {
+      font-size: 1.2rem;
+    }
+  }
+}
 
 .authContainer {
   font-family: "Josefin Sans", sans-serif;
   font-weight: 300;
-  // height: 100vh;
+
   margin-top: 70px;
+  padding-bottom: 50px;
 
   .authTitle {
     color: $light-blue;
@@ -363,6 +397,7 @@ footer {
   align-items: center;
   justify-content: center;
   font-size: 0.9rem;
+  box-shadow: 1px -1px 10px rgba(31, 31, 31, 0.158);
   span {
     font-family: "Pacifico", cursive;
     margin-right: 10px;

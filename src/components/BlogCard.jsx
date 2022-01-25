@@ -7,7 +7,7 @@ const BlogCard = ({ title, img, text, date, id }) => {
     return <Link className='blog-link' to={`/blog/${id}`}>
         <div className='card-container'>
             <div className="blog-card-img-container">
-                <img src={img} alt={title} className="blog-card-img" />
+                <img src={img[0]} alt={title} className="blog-card-img" />
                 <div className="img-overlay"></div>
             </div>
             <div className="card-wrapper">
@@ -24,11 +24,11 @@ const BlogCard = ({ title, img, text, date, id }) => {
                 </div>
                 <div className="blog-card-body">
                     <p className="blog-card-body-text">
-                        {text}
+                        {text[0]}
                     </p>
                 </div>
                 <div className="blog-card-footer">
-                    <Link to="/" className="card-link"> find out more</Link>
+                    <Link to={`/blog/${id}`} className="card-link"> find out more</Link>
                     <Icon icon="bi:arrow-right" className='blog-card-icon' />
                 </div>
             </div>

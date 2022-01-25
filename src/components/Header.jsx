@@ -37,8 +37,8 @@ const Header = () => {
                     <div className={`menu-links ${toggle && "menu-links-open"}`}>
                         <Icon icon="ion:close-outline" onClick={() => setToggle(false)} className="close-menu" />
                         <Link to="/" className="menu-item" >Home</Link>
-                        <Link to="/" className="menu-item" >Contact</Link>
-                        <Link to="/" className="menu-item" >About</Link>
+                        <Link to="/contact" className="menu-item" >Contact</Link>
+                        <Link to="/about" className="menu-item" >About</Link>
                         <div className="group-icons mobile">
                             <Link to="/update-profile"> <Icon icon="iconoir:profile-circled" /> </Link>
                             <button className="logout" onClick={handleLogout}> <Icon icon="majesticons:logout-line" /> </button>
@@ -65,7 +65,8 @@ const Header = () => {
             <h1 className="title">
                 Apartmen Tour
             </h1>
-            <p className='website-intro'> <span>Love Apartment Tours?</span> <br />   If that's your thing register to get in the the comunity where the best apratments are taken on tour or login if you are already a member. </p>
+            {/* <p className='website-intro'> <span>Love Apartment Tours?</span> <br />   If that's your thing register to get in the the comunity where the best apratments are taken on tour or login if you are already a member. </p> */}
+            <p className='website-intro'> <span>Hi design lover.</span> <br />Welcome to the place where good design is what we are talking about. Pick up the newest trends for decorating your precious space and <i> make that apartment glow.</i> Get inspired. </p>
         </div>
     }
 
