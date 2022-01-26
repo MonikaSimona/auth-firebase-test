@@ -86,7 +86,7 @@ export const UpdateProfile = () => {
                 <label htmlFor="passwordConfirm">Confirm Password</label>
                 <input type="password" id="passwordConfirm" {...register("passwordConfirm")} placeholder="Leave blank to keep the same..." />
 
-                <button disabled={loading} type="submit">Update</button>
+                <button className='button' disabled={loading} type="submit">Update</button>
             </form>
 
             <p className="authInfo">

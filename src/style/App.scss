@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap");
-$light-blue: #a2d2ff;
+$light-blue: #83c3ff;
 $beige: #fef9ef;
 $light-orange: #ff865e;
 $yellow: #fee440;
@@ -152,56 +152,8 @@ $header-bg: rgb(19, 14, 14);
     border-radius: 10px;
     box-shadow: 10px 11px 7px -5px rgba(51, 51, 51, 0.13);
     margin-bottom: 20px;
-    label {
-      color: $text-dark;
-      margin-top: 15px;
-      font-size: 1.2rem;
-    }
-    input:-webkit-autofill {
-      -webkit-box-shadow: inset 0 0 0px 9999px #e0edfa;
-      box-shadow: inset 0 0 0px 9999px #e0edfa;
-    }
-    input {
-      margin: 10px 0;
-      border: 1px solid $text-dark;
-      border-radius: 3px;
-      color: $text-dark;
-      padding: 5px 0;
-      padding-left: 10px;
-      background-color: white !important;
-      &::placeholder {
-        color: $light-blue;
-      }
-
-      &:focus,
-      &:focus-visible {
-        outline: none;
-        border-color: $light-blue;
-        background-color: white;
-      }
-      &:active {
-        background-color: white;
-      }
-    }
-    button {
-      width: 50%;
-      background-color: white;
-      color: $text-dark;
-      border: 2px solid $light-blue;
-      margin: 20px auto;
-      padding: 5px 0;
-      border-radius: 3px;
-      transition: 0.3s;
-      &:hover,
-      &:focus {
-        background-color: $light-blue;
-        color: $beige;
-      }
-      &:disabled {
-        opacity: 0.5;
-      }
-    }
   }
+
   .authInfo {
     text-align: center;
     color: $text-dark;
@@ -228,6 +180,56 @@ $header-bg: rgb(19, 14, 14);
     }
   }
 }
+label {
+  color: $text-dark;
+  margin-top: 15px;
+  font-size: 1.2rem;
+}
+input:-webkit-autofill {
+  -webkit-box-shadow: inset 0 0 0px 9999px #e0edfa;
+  box-shadow: inset 0 0 0px 9999px #e0edfa;
+}
+input {
+  margin: 10px 0;
+  border: 1px solid $text-dark;
+  border-radius: 3px;
+  color: $text-dark;
+  padding: 5px 0;
+  padding-left: 10px;
+  background-color: white !important;
+  &::placeholder {
+    color: $light-blue;
+  }
+
+  &:focus,
+  &:focus-visible {
+    outline: none;
+    border-color: $light-blue;
+    background-color: white;
+  }
+  &:active {
+    background-color: white;
+  }
+}
+
+.button {
+  width: 50%;
+  background-color: white;
+  color: $text-dark;
+  border: 2px solid $light-blue;
+  margin: 20px auto;
+  padding: 5px 0;
+  border-radius: 3px;
+  transition: 0.3s;
+  &:hover {
+    background-color: $light-blue;
+    color: $beige;
+    outline: none;
+  }
+  &:disabled {
+    opacity: 0.5;
+  }
+}
 .menu {
   font-family: "Josefin Sans", sans-serif;
   display: flex;
@@ -239,9 +241,9 @@ $header-bg: rgb(19, 14, 14);
   padding-bottom: 0;
   position: relative;
   z-index: 100;
+  justify-content: space-between;
 
   .logo {
-    margin-right: auto;
     .logo-text {
       text-decoration: none;
       font-weight: 600;
@@ -266,8 +268,7 @@ $header-bg: rgb(19, 14, 14);
     width: auto;
     display: flex;
     gap: 45px;
-    margin: 0 auto;
-
+    margin-left: 78px;
     .menu-item {
       color: $beige;
       text-decoration: none;
@@ -328,7 +329,6 @@ $header-bg: rgb(19, 14, 14);
 
   .social-links {
     display: flex;
-    margin-left: auto;
     gap: 10px;
     align-items: center;
     a {

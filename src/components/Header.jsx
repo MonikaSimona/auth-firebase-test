@@ -48,9 +48,9 @@ const Header = () => {
                         </div>
                         <div className={`menu-links ${toggle && "menu-links-open"}`}>
                             <Icon icon="ion:close-outline" onClick={() => setToggle(false)} className="close-menu" />
-                            <Link to="/" className="menu-item" >Home</Link>
-                            <Link to="/contact" className="menu-item" >Contact</Link>
-                            <Link to="/about" className="menu-item" >About</Link>
+                            <Link to="/" className="menu-item" onClick={() => setToggle(false)} >Home</Link>
+                            <Link to="/contact" className="menu-item" onClick={() => setToggle(false)}  >Contact</Link>
+                            <Link to="/about" className="menu-item" onClick={() => setToggle(false)} >About</Link>
                             <div className="group-icons mobile">
                                 <Link to="/update-profile"> <Icon icon="iconoir:profile-circled" /> </Link>
                                 <button className="logout" onClick={handleLogout}> <Icon icon="majesticons:logout-line" /> </button>

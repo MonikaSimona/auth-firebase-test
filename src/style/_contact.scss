@@ -1,3 +1,91 @@
 .contact-page-wrapper {
-    height: 90vh;
+}
+.content-title {
+    color: $text-dark;
+    font-size: 1.2rem;
+    font-family: "Raleway", sans-serif;
+    margin-bottom: 10px;
+    margin-top: 30px;
+}
+.link {
+    width: fit-content;
+    transition: 0.3s;
+    &:hover {
+        color: $light-orange !important;
+    }
+}
+.content-icon {
+    font-size: 24px;
+    margin: 0 10px;
+    color: $light-blue;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    gap: 15px;
+    margin-top: 20px;
+}
+.input-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    textarea {
+        border: 1px solid $text-dark;
+        border-radius: 3px;
+        padding-left: 10px;
+        height: 200px;
+        &:focus,
+        &:focus-visible {
+            outline: none;
+            border-color: $light-blue;
+        }
+        &::placeholder {
+            color: $light-blue;
+        }
+    }
+}
+.about {
+    text-align: left !important;
+    text-indent: 5px;
+}
+.team {
+    margin-top: 20px;
+    display: flex;
+    gap: 45px;
+    justify-content: center;
+    @include tablet() {
+        flex-direction: column;
+        gap: 25px;
+    }
+    &-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        &-image {
+            display: flex;
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            border: 2px solid $light-blue;
+            justify-content: center;
+            align-items: center;
+        }
+        &-title {
+            margin: 0;
+            font-family: "Josefin Sans", sans-serif;
+            font-size: 1.3rem;
+            font-weight: bolder;
+        }
+        &-desc {
+            font-family: "Raleway", sans-serif;
+        }
+    }
+    &-img {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        border-radius: 50%;
+    }
 }

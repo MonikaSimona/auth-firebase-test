@@ -12,23 +12,14 @@ import { ForgotPassword } from './ForgotPassword';
 import { UpdateProfile } from './UpdateProfile';
 import Footer from './Footer';
 import SingleBlog from './SingleBlog';
-import { Icon } from '@iconify/react';
 import Contact from './Contact';
 import About from './About';
 
 
 function App() {
-  // const scrollToTop = () => {
-  //   console.log("click")
-  //   window.scrollTo({
-  //     top: 0,
-  //     behavior: "smooth"
-  //   });
-  // }
 
   return (
     <>
-      {/* <button className='up-to-top' onClick={() => scrollToTop()}><Icon className='up-to-top-icon' icon="akar-icons:circle-chevron-up" /></button> */}
       <div className="wrapper">
 
         <Router>
