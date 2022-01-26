@@ -40,7 +40,7 @@ export const Login = () => {
                 <label htmlFor="password">Password</label>
                 <input type="password" id="password" {...register("password")} required />
 
-                <button disabled={loading} type="submit">Log In</button>
+                <button className="button" disabled={loading} type="submit">Log In</button>
                 <div className="forgotPassword">
                     <Link to="/forgot-password">Forgot password?</Link>
                 </div>

@@ -77,7 +77,7 @@ export const Signup = () => {
                     required
                     autoComplete="new-password" />
 
-                <button disabled={loading} type="submit">Sign Up</button>
+                <button className='button' disabled={loading} type="submit">Sign Up</button>
             </form>
             <p className="authInfo">
                 Already have an account? <Link to="/login" className="linkButton">Log In</Link>
