@@ -10,8 +10,11 @@ const Dashboard = () => {
     const { currentUser } = useAuth();
     console.log(currentUser)
     useEffect(() => {
-        window.location.reload();
-    }, [])
+        if (!currentUser) {
+
+            window.location.reload();
+        }
+    }, [currentUser])
     return (
         <div className="container px-4 px-sm-0">
             <h1 className="welcome-message"><span className='welcome-message-hello'>Hello</span> <br /> {currentUser && currentUser.displayName && currentUser.displayName.split(" ")[0]} {currentUser.displayName.split(" ")[1]}</h1>
