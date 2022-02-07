@@ -60,7 +60,7 @@ const Header = () => {
                             <a href="https://www.facebook.com" target="_blank" rel="noreferrer" > <Icon icon="ph:facebook-logo-fill" className="social-links-icon" /> </a>
                             <a href="https://www.instagram.com" target="_blank" rel="noreferrer" > <Icon icon="ph:instagram-logo-fill" className="social-links-icon" /> </a>
                             <div className="group-icons desktop">
-                                <Link to="/update-profile"> <Icon icon="iconoir:profile-circled" data-tip="profile" /> </Link>
+                                <Link to="/update-profile" onClick={() => setToggle(false)}> <Icon icon="iconoir:profile-circled" data-tip="profile" /> </Link>
                                 <button className="logout" onClick={handleLogout}> <Icon icon="majesticons:logout-line" data-tip="logout" /> </button>
                                 <ReactTooltip />
                             </div>
