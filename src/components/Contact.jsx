@@ -55,6 +55,7 @@ const Contact = () => {
         <Toaster />
         <div className='contact-page-wrapper'>
             <div className="image-container">
+                <img className='helperImage' src="https://images.unsplash.com/photo-1565599573128-ae3ef5c9f478?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="contact" />
                 <img src="https://images.unsplash.com/photo-1565599573128-ae3ef5c9f478?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="contact" />
                 <div className="overlay"></div>
                 <div className="title-section">

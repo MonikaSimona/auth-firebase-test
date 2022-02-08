@@ -8,20 +8,10 @@ import BlogCard from './BlogCard';
 
 const Dashboard = () => {
     const { currentUser } = useAuth();
-    let userDisplayName = ""
-    // if (currentUser.displayName !== null) {
-    //     userDisplayName = currentUser.displayName
-    // } else {
-    //     window.location.reload();
-    //     userDisplayName = currentUser.displayName
-    // }
-    useEffect(() => {
-        console.log(currentUser.displayName)
-    }, [])
+
     return (
         <div className="container px-4 px-sm-0">
             <h1 className="welcome-message"><span className='welcome-message-hello'>Hello</span> <br />
-                {/* {currentUser.email} */}
                 {currentUser && currentUser.displayName && currentUser.displayName}
             </h1>
             <h3 className='intro'>

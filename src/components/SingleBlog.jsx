@@ -3,20 +3,24 @@ import React from 'react';
 import { useEffect } from 'react';
 import { useParams } from 'react-router';
 import { blogsArray } from '../demo_content';
+import { isBrowser, isMobile } from 'react-device-detect';
 const SingleBlog = () => {
     let { id } = useParams()
     const { title, images, parapgraphs, date } = blogsArray[id]
     console.log("image", images)
 
     useEffect(() => {
+        console.log("is mobile? ", isMobile)
+        console.log("is browser? ", isBrowser)
         window.scrollTo({
-            top: 0,
+            top: isMobile ? 0 : 200,
 
         });
     }, [])
 
     return <>
         <div className="image-container">
+            <img className='helperImage' src={images[0]} alt={title} />
             <img src={images[0]} alt={title} />
             <div className="overlay"></div>
             <div className="title-section">

@@ -3,6 +3,7 @@ import React from 'react';
 const About = () => {
     return <div className='contact-page-wrapper'>
         <div className="image-container">
+            <img className='helperImage' src="https://images.pexels.com/photos/2387674/pexels-photo-2387674.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="about" />
             <img src="https://images.pexels.com/photos/2387674/pexels-photo-2387674.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="about" />
             <div className="overlay"></div>
             <div className="title-section">
