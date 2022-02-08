@@ -27,20 +27,20 @@ function App() {
             <AuthProvider>
               <Header />
               <Routes>
-                <Route exact path="/" element={<PrivateRoute />}>
-                  <Route exact path="/" element={<Dashboard />} />
+                <Route path="/" element={<PrivateRoute />}>
+                  <Route path="/" element={<Dashboard />} />
                 </Route>
-                <Route exact path="/update-profile" element={<PrivateRoute />}>
-                  <Route exact path="/update-profile" element={<UpdateProfile />} />
+                <Route path="/update-profile" element={<PrivateRoute />}>
+                  <Route path="/update-profile" element={<UpdateProfile />} />
                 </Route>
-                <Route exact path="/blog/:id" element={<PrivateRoute />}>
-                  <Route exact path="/blog/:id" element={<SingleBlog />} />
+                <Route path="/blog/:id" element={<PrivateRoute />}>
+                  <Route path="/blog/:id" element={<SingleBlog />} />
                 </Route>
-                <Route exact path="/contact" element={<PrivateRoute />}>
-                  <Route exact path="/contact" element={<Contact />} />
+                <Route path="/contact" element={<PrivateRoute />}>
+                  <Route path="/contact" element={<Contact />} />
                 </Route>
-                <Route exact path="/about" element={<PrivateRoute />}>
-                  <Route exact path="/about" element={<About />} />
+                <Route path="/about" element={<PrivateRoute />}>
+                  <Route path="/about" element={<About />} />
                 </Route>
                 <Route path="/signup" element={<Signup />} />
                 <Route path="/login" element={<Login />} />

@@ -5,7 +5,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 
 export const Signup = () => {
-    const { signup } = useAuth()
+    const { signup, displayError, updateDisplayName } = useAuth()
     const [error, setError] = useState('')
     const [loading, setLoading] = useState(false)
     const navigate = useNavigate()
@@ -18,12 +18,14 @@ export const Signup = () => {
         try {
             setError("")
             setLoading(true)
-            await signup(data.email, data.password, data.firstName, data.lastName)
-            navigate("/")
+            await signup(data.email, data.password, data.firstName, data.lastName, navigate)
+            // await updateDisplayName(data.firstName, data.lastName)
+            // navigate("/")
 
         } catch (error) {
             setError(error.message)
             console.log("failed", error)
+            console.log("Existing", displayError)
 
         }
 
@@ -32,7 +34,7 @@ export const Signup = () => {
     return (
         <div className="container authContainer d-flex flex-column align-items-center ">
             <h1 className="authTitle">Sing up</h1>
-            {error && <Alert variant="danger">{error}</Alert>}
+            {error && <Alert variant="danger">{error ? error : displayError}</Alert>}
             <form className="authCard" onSubmit={handleSubmit(submitSignUpForm)} >
                 <label htmlFor="email">Email</label>
                 <input
@@ -41,7 +43,8 @@ export const Signup = () => {
                     placeholder="someone@example.com"
                     {...register("email")}
                     required
-                    autoComplete="new-email" />
+                    autoComplete="new-email"
+                />
 
                 <label htmlFor="firstName">First name</label>
                 <input
@@ -50,7 +53,8 @@ export const Signup = () => {
                     placeholder="Jane"
                     {...register("firstName")}
                     required
-                    autoComplete="new-text" />
+                    autoComplete="new-text"
+                />
 
                 <label htmlFor="lastName">Last name</label>
                 <input
@@ -59,7 +63,8 @@ export const Signup = () => {
                     placeholder="Doe"
                     {...register("lastName")}
                     required
-                    autoComplete="new-text" />
+                    autoComplete="new-text"
+                />
 
                 <label htmlFor="password">Password</label>
                 <input
@@ -67,7 +72,8 @@ export const Signup = () => {
                     id="password"
                     {...register("password")}
                     required
-                    autoComplete="new-password" />
+                    autoComplete="new-password"
+                />
 
                 <label htmlFor="confirmPassword">Confirm Password</label>
                 <input
@@ -75,7 +81,8 @@ export const Signup = () => {
                     id="confirmPassword"
                     {...register("confirmPassword")}
                     required
-                    autoComplete="new-password" />
+                    autoComplete="new-password"
+                />
 
                 <button className='button' disabled={loading} type="submit">Sign Up</button>
             </form>

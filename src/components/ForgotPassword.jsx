@@ -42,7 +42,7 @@ export const ForgotPassword = () => {
                     placeholder="someone@example.com" {...register("email")} />
 
 
-                <button disabled={loading} type="submit">Reset Password</button>
+                <button className='button' disabled={loading} type="submit">Reset Password</button>
 
             </form>
 

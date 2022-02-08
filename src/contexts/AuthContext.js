@@ -12,6 +12,7 @@ export const useAuth = () => {
 export const AuthProvider = ({ children }) => {
     const [currentUser, setCurrentUser] = useState()
     const [loading, setLoading] = useState(true)
+    const [displayError, setDisplayError] = useState("")
 
     useEffect(() => {
         const unsubscribe = auth.onAuthStateChanged(user => {
@@ -21,14 +22,20 @@ export const AuthProvider = ({ children }) => {
         return unsubscribe
     }, [])
 
-    const signup = (email, password, firstName, lastName) => {
-        return auth.createUserWithEmailAndPassword(email, password).then((result) => {
-            result.user.updateProfile({
-                displayName: firstName + " " + lastName
+    const signup = (email, password, firstName, lastName, navigate) => {
+        return auth.createUserWithEmailAndPassword(email, password)
+            .then((result) => {
+                result.user.updateProfile({
+                    displayName: firstName + " " + lastName
+                }).then((res) => {
+                    navigate('/')
+                })
+
             })
-        }).catch((error) => {
-            console.log("display error", error.message)
-        })
+            .catch((error) => {
+                console.log("display error", error.message)
+                setDisplayError(error.message)
+            })
     }
 
     const login = (email, password) => {
@@ -59,7 +66,8 @@ export const AuthProvider = ({ children }) => {
         resetPassword,
         updateEmail,
         updatePassword,
-        updateDisplayName
+        updateDisplayName,
+        displayError
 
     }
     return (
